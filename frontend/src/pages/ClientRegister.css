@@ -1,0 +1,87 @@
+.register{
+    width:100%;
+    min-height:100vh;
+    background:#f4f6f9;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px;
+}
+
+.register h1{
+    margin-bottom:30px;
+    color:#1d3557;
+}
+
+.register-form{
+    width:1000px;   /* 800px se bada */
+}
+
+.register-form button{
+    width:800px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.row{
+    display:flex;
+    gap:80px;
+    margin-bottom:20px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+textarea{
+    height:90px;
+    margin-bottom:20px;
+    resize:none;
+}
+
+.register button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:#0066ff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#004fd1;
+}
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.register .logo{
+    position: fixed;      /* ya absolute */
+    top: 750px;
+    left: 10%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    z-index: 9999;
+}
+
+.register .logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}

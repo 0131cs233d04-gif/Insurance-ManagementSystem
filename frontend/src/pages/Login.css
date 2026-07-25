@@ -1,0 +1,432 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    font-family:Arial, sans-serif;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+.page{
+    width:100%;
+    min-height:100vh;
+    position:relative;
+    background-image:url("../assets/def.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* Open Login Button */
+
+.open-btn{
+    position:fixed;
+    top:100px;
+    right:100px;
+    padding:12px 28px;
+    border:none;
+    border-radius:8px;
+    background:#ffffff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color:#000;
+    cursor:pointer;
+}
+
+
+/* Login Card */
+
+.login-container{
+    position:fixed;
+    top:45%;
+    right:90px;
+    transform:translateY(-50%);
+    width:420px;
+    min-height:600px;
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    text-align:center;
+}
+
+.login-container h1{
+    font-size:60px;
+    margin-top:20px;
+}
+
+.login-container h2{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.login-container label{
+    position: absolute;
+    left: 40px;
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.login-container input{
+    width:100%;
+    font-size:16px;
+    padding:12px;
+    margin-bottom:25px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+.login-container input:focus{
+    border-color:#2d7ff9;
+}
+
+.login-container button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#2d7ff9;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.login-container button:hover{
+    background:#1d5fd1;
+}
+
+.login-container p{
+    margin-top:20px;
+}
+
+.login-container a{
+    text-decoration:none;
+    color:#2d7ff9;
+    font-weight:bold;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+.info-box{
+    position:fixed;
+    top:65%;
+    right:550px;   /* Login box ke left me */
+    transform:translateY(-50%);
+    width:450px;
+    height:600px;
+    background:rgba(255,255,255,0.0);
+    backdrop-filter:blur(0px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.0);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+.info-box h1{
+    color: red;
+}
+.info-box h2{
+    position: absolute;
+    top: 260px;
+    left: 70px;
+    font-size:20px;
+    font-weight: bold;
+    font-family: cursive;
+    color: red;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+.info-box1{
+    position:fixed;
+
+    top:17%;
+    left:50px;   /* Login box ke left me */
+    transform:translateY(-50%);
+    width:600px;
+    height:200px;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(1px);
+    border-radius:20px;
+    border:1px solid rgba(0,0,0,.0);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    z-index: 1000;
+}
+
+.info-box1 h1{
+    position: fixed;
+    left:50px;
+    top:0px;
+}
+
+
+.info-box1 h2{
+    position: fixed;
+    left:50px;
+    font-size:20px;
+    font-weight:normal;
+    text-align: left;
+    top: 100px;
+
+ }
+
+/*--------------------------------------------------------------------------------------------------------*/
+#img1{
+    position:fixed;
+    left: 12px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+.slider{
+    width:100%;
+    margin-top:100px;
+
+    display:flex;
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+}
+
+.slider::-webkit-scrollbar{
+    display:none;
+}
+
+.slide{
+    min-width:100vw;
+    display:grid;
+    grid-template-columns:repeat(3,350px);
+    justify-content:right;
+    gap:20px;
+    padding:120px 20px;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+.panel{
+    position: relative;
+    width: 350px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.panel:hover{
+    transform: translateY(-20px) scale(1.05);
+    box-shadow:0 25px 45px rgba(0,0,0,.45);
+}
+
+.panel-img{
+    width:105%;
+    height:100%;
+    object-fit:fill;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(5px);
+}
+
+/* Dark overlay taaki text clear dikhe */
+.panel::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+.pan{
+    display: flex;
+    justify-content: left;
+    margin-top: 600px;
+    margin-bottom: 50px;
+}
+
+
+.pan1{
+    display: flex;
+    justify-content: left;
+    margin-bottom: 40px;
+}
+
+.panel1,
+.panel2{
+    width: 1950px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.3); /* 30% white */
+    backdrop-filter: blur(10px);          /* Glass effect */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+.plan-header{
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 10000;
+}
+
+.plan-header h3{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.arrow-btn{
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.arrow-btn:hover{
+    transform: scale(1.1);
+
+}
+
+.plan-header{
+     position: fixed;
+     left: 50%;
+     bottom: 20px;
+     transform: translateX(-50%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
+     z-index: 10000;
+ }
+
+.plan-header h3{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+
+.arrow-btn{
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+.arrow-btn:hover{
+    transform: scale(1.1);
+}
+/*--------------------------------------------------------------------------------------------------------*/
+
+.plan-panel{
+    position: fixed;
+    left: 50%;
+    bottom: -1000px;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+    width: 80%;
+    height: 900px;
+    border-radius: 25px 25px 0 0;
+    transition: bottom .5s ease;
+    z-index: 9999;
+}
+.plan-panel.active{
+    bottom:0;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+.plan-details{
+    position: absolute;
+    top: 750px;
+    left: 0px;
+    width: 800px;
+    min-height: 250px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(1px);
+    color: black;
+    z-index: 1000;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
