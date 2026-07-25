@@ -40,7 +40,7 @@ Tools
 - Postman
 - Git & GitHub
 
----
+
 
 Modules
 
@@ -83,11 +83,11 @@ Database
 - Spring Data JPA
 - Hibernate ORM
 
----
+
 
 Project Status
 
-🚧 Currently In Progress
+Currently In Progress
 
 Modules Completed:
 - User Authentication
