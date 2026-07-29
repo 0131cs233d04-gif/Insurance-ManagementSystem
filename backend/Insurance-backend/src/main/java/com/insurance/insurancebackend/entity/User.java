@@ -1,4 +1,5 @@
 package com.insurance.insurancebackend.entity;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -38,6 +39,8 @@ public class User {
     @Column(nullable = false)
     @NotBlank
     @Size(min = 8,max = 60, message = "Password must be between 8 and 20 characters")
+    @JsonProperty
+            (access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
 }

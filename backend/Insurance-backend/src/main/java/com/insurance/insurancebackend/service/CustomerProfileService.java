@@ -37,6 +37,11 @@ public class CustomerProfileService {
         customerProfile.setMaritalStatus(customerProfileRequest.getMaritalStatus());
 
         customerProfileRepository.save(customerProfile);
+    }
+    public CustomerProfile getProfile(Long userId) {
+
+        return customerProfileRepository.findByUserId(userId)
+                .orElseThrow(() -> new RuntimeException("Customer Profile Not Found"));
 
     }
 }

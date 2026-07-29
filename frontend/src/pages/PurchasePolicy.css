@@ -1,0 +1,81 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+}
+
+.purchase-container{
+
+    width:700px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+
+}
+
+.purchase-container h1{
+
+    text-align:center;
+    color:#003366;
+
+}
+
+.policy-card{
+
+    background:#eef5ff;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:25px;
+
+}
+
+.policy-card h2{
+
+    color:#004aad;
+
+}
+
+.purchase-form{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.purchase-form label{
+
+    margin-top:15px;
+    font-weight:bold;
+
+}
+
+.purchase-form input,
+.purchase-form select{
+
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ccc;
+
+}
+
+.purchase-form button{
+
+    margin-top:25px;
+    padding:12px;
+    background:#004aad;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+.purchase-form button:hover{
+
+    background:#002f6c;
+
+}

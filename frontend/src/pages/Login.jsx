@@ -126,45 +126,86 @@ function Login() {
             <div className="slider">
 
                 <div className="slide">
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[0])}>
-                        <img src={health} alt="Health Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[0])}
+                         onClick={()=> navigate("/purchase-policy/1")}>
+                        <img src={health}
+                             alt="Health Insurance"
+                             className="panel-img" />
                     </div>
 
-                    <div className="panel"  onMouseEnter={() => setSelectedPlan(plans[1])}>
-                        <img src={life} alt="Life Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[1])}
+                         onClick={()=> navigate("/purchase-policy/2")}
+                    >
+                        <img src={life}
+                             alt="Life Insurance"
+                             className="panel-img" />
                     </div>
 
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[2])}>
-                        <img src={car} alt="Car Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[2])}
+                         onClick={()=> navigate("/purchase-policy/3")}
+                    >
+                        <img src={car}
+                             alt="Car Insurance"
+                             className="panel-img" />
                     </div>
                 </div>
 
                 <div className="slide">
 
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[3])}>
-                        <img src={bike} alt="Bike Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[3])}
+                         onClick={()=> navigate("/purchase-policy/4")}
+                    >
+                        <img src={bike}
+                             alt="Bike Insurance"
+                             className="panel-img" />
                     </div>
 
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[4])}>
-                        <img src={home} alt="Home Insurance" className="panel-img" />
+                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[4])}
+                         onClick={()=> navigate("/purchase-policy/5")}
+                    >
+                        <img src={home}
+                             alt="Home Insurance"
+                             className="panel-img" />
                     </div>
 
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[5])}>
-                        <img src={business} alt="Business Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[5])}
+                         onClick={()=> navigate("/purchase-policy/6")}
+                    >
+                        <img src={business}
+                             alt="Business Insurance"
+                             className="panel-img" />
                     </div>
 
                 </div>
 
                 <div className="slide">
 
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[6])}>
-                        <img src={personal} alt="Personal Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[6])}
+                         onClick={()=> navigate("/purchase-policy/7")}
+                    >
+                        <img src={personal}
+                             alt="Personal Insurance"
+                             className="panel-img" />
                     </div>
 
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[7])}>
-                        <img src={travel} alt="Travel Insurance" className="panel-img" />
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[7])}
+                         onClick={()=> navigate("/purchase-policy/8")}
+                    >
+                        <img src={travel}
+                             alt="Travel Insurance"
+                             className="panel-img" />
                     </div>
-                    <div className="panel" onMouseEnter={() => setSelectedPlan(plans[8])}>
+                    <div className="panel"
+                         onMouseEnter={() => setSelectedPlan(plans[8])}
+                         onClick={()=> navigate("/purchase-policy/9")}
+                    >
                         <img src={term} alt="Term Insurance" className="panel-img" />
                     </div>
                 </div>

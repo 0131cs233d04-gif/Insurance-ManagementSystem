@@ -1,11 +1,9 @@
 package com.insurance.insurancebackend.controller;
 
 import com.insurance.insurancebackend.dto.CustomerProfileRequest;
+import com.insurance.insurancebackend.entity.CustomerProfile;
 import com.insurance.insurancebackend.service.CustomerProfileService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -24,5 +22,11 @@ public class CustomerprofileController {
         customerProfileService.save(customerProfileRequest);
 
         return "Customer Profile Saved Successfully";
+    }
+    @GetMapping("/{userId}")
+    public CustomerProfile getProfile(@PathVariable Long userId) {
+
+        return customerProfileService.getProfile(userId);
+
     }
 }
