@@ -55,17 +55,23 @@ public class UserService {
         customerProfileRepository.save(profile);
 
     }
-    public boolean loginUser(String email, String password) {
+    public User loginUser(String email, String password) {
 
         Optional<User> user = userRepository.findByEmail(email);
 
         if (user.isPresent()) {
 
-            return passwordEncoder.matches(password, user.get().getPassword());
+            User foundUser = user.get();
 
+            if (passwordEncoder.matches(
+                    password,
+                    foundUser.getPassword())) {
+
+                return foundUser;
+            }
         }
 
-        return false;
+        return null;
     }
 
 }

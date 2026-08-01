@@ -1,0 +1,115 @@
+/* Full Page */
+.complete-profile-container {
+    min-height: 100vh;
+    background: #eef2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px 20px;
+}
+
+
+/* Form Card */
+.complete-profile-card {
+    width: 650px;
+    background: white;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Heading */
+.complete-profile-card h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+    font-size: 30px;
+}
+
+
+/* Inputs */
+.complete-profile-card input,
+.complete-profile-card select {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 15px;
+    box-sizing: border-box;
+
+    outline: none;
+}
+
+
+/* Input Focus */
+.complete-profile-card input:focus,
+.complete-profile-card select:focus {
+    border: 2px solid #2563eb;
+}
+
+
+/* Buttons Container */
+.profile-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+
+/* Buttons */
+.profile-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Back Button */
+.profile-back-btn {
+    background: #6b7280;
+    color: white;
+}
+
+.profile-back-btn:hover {
+    background: #4b5563;
+}
+
+
+/* Save Button */
+.profile-save-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.profile-save-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .complete-profile-card {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .profile-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-buttons button {
+        width: 100%;
+    }
+}

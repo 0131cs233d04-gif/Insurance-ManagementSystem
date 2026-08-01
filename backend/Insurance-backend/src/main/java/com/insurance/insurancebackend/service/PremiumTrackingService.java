@@ -53,10 +53,15 @@ public class PremiumTrackingService {
     }
 
     public List<PremiumTracking> getAllPremiums() {
+
         return premiumTrackingRepository.findAll();
+    }
+    public List<PremiumTracking> getPremiumsByUserId(Long userId) {
+        return premiumTrackingRepository.findByCustomer_User_Id(userId);
     }
 
     public Optional<PremiumTracking> getPremiumById(Long id) {
+
         return premiumTrackingRepository.findById(id);
     }
 

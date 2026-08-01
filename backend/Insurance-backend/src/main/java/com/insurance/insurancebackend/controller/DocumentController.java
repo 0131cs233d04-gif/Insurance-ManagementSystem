@@ -31,6 +31,14 @@ public class DocumentController {
         return documentService.getAllDocuments();
     }
 
+    // Get Documents By Logged-in User
+    @GetMapping("/user/{userId}")
+    public List<Document> getDocumentsByUserId(
+            @PathVariable Long userId) {
+
+        return documentService.getDocumentsByUserId(userId);
+    }
+
     // Get Document By Id
     @GetMapping("/{id}")
     public Optional<Document> getDocumentById(@PathVariable Long id) {

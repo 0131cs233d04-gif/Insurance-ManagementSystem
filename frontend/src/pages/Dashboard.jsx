@@ -1,7 +1,7 @@
 
 import "./Dashboard.css";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Dashboard() {
     const [policies, setPolicies] = useState([]);
@@ -10,9 +10,12 @@ function Dashboard() {
     const [documents, setDocuments] = useState([]);
     const navigate = useNavigate();
 
+
     useEffect(() => {
 
-        fetch("http://localhost:8080/api/policy-purchases")
+        const userId = localStorage.getItem("userId");
+
+        fetch(`http://localhost:8080/api/policy-purchases/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -20,7 +23,7 @@ function Dashboard() {
             })
             .catch((err) => console.error(err));
 
-        fetch("http://localhost:8080/api/claims")
+        fetch(`http://localhost:8080/api/claims/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Claims:", data);
@@ -28,7 +31,7 @@ function Dashboard() {
             })
             .catch((err) => console.error(err));
 
-        fetch("http://localhost:8080/api/premium")
+        fetch(`http://localhost:8080/api/premium/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Premiums:", data);
@@ -36,7 +39,7 @@ function Dashboard() {
             })
             .catch((err) => console.error(err));
 
-        fetch("http://localhost:8080/api/documents")
+        fetch(`http://localhost:8080/api/documents/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Documents:", data);
@@ -54,12 +57,40 @@ function Dashboard() {
                     <h1>Insurance Dashboard</h1>
                     <p>Welcome Back 👋</p>
                 </div>
-                <button className="profile-btn"  onClick={() => navigate("/profile")} >
-                My Profile
-            </button>
+
+
 
 
             </header>
+            <div className="buttonpan">
+            <button className="profile-btn"  onClick={() => navigate("/profile")} >
+                My Profile
+            </button>
+            <button
+                className="policy-btn"
+                onClick={() => navigate("/my-policies")}
+            >
+                My Policies
+            </button>
+
+            <button className="profile-btn"
+                onClick={()=>navigate("/claims")}>
+                My Claims
+            </button>
+
+            <Link to="/submit-claim">
+                <button class="profile-btn">Submit Claim</button>
+            </Link>
+
+            <button
+                className="purchase-btn"
+                onClick={() => navigate("/")}
+            >
+                Purchase Policy
+            </button>
+
+            </div>
+
 
             <div className="cards">
 
@@ -112,7 +143,7 @@ function Dashboard() {
                 </table>
             </div>
 
-            <div className="section">
+            <div className="section1">
                 <h2>Recent Claims</h2>
 
                 <table>

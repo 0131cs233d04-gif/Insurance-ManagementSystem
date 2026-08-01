@@ -95,6 +95,13 @@ public class DocumentService {
         return documentRepository.findAll();
     }
 
+    // Get Documents By Logged-in User
+    public List<Document> getDocumentsByUserId(Long userId) {
+
+        return documentRepository.findByCustomer_User_Id(userId);
+
+    }
+
     // Get Document By Id
     public Optional<Document> getDocumentById(Long id) {
         return documentRepository.findById(id);

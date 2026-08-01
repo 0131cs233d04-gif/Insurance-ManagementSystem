@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./PurchasePolicy.css";
+import bgVideo from "../assets/190037-887039342.mp4";
+
 
 function PurchasePolicy() {
 
@@ -8,6 +10,7 @@ function PurchasePolicy() {
     const navigate = useNavigate();
 
     const [policy, setPolicy] = useState(null);
+    const [customerId, setCustomerId] = useState(null);
 
     const [purchaseDate, setPurchaseDate] = useState("");
     const [policyStartDate, setPolicyStartDate] = useState("");
@@ -16,6 +19,7 @@ function PurchasePolicy() {
     const [paymentStatus, setPaymentStatus] = useState("PAID");
 
     useEffect(() => {
+
 
         fetch(`http://localhost:8080/api/policies/${policyId}`)
             .then((res) => {
@@ -30,6 +34,20 @@ function PurchasePolicy() {
             .catch((err) => {
                 console.error(err);
             });
+        const userId = localStorage.getItem("userId");
+
+        fetch(`http://localhost:8080/api/profile/${userId}`)
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Customer profile not found");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                console.log("CUSTOMER PROFILE:", data);
+                setCustomerId(data.id);
+            })
+            .catch((err) => console.error(err));
 
     }, [policyId]);
 
@@ -41,10 +59,14 @@ function PurchasePolicy() {
         }
 
         try {
+            if (!customerId) {
+                alert("Please complete your profile first.");
+                return;
+            }
 
             const purchaseData = {
 
-                customerId: 1, // Testing
+                customerId: customerId, // Testing
                 policyId: policy.id,
 
                 purchaseDate: purchaseDate,
@@ -104,10 +126,60 @@ function PurchasePolicy() {
         return <h2>Loading...</h2>;
     }
 
+    const handlePurchasePolicy = async () => {
+
+        const userId = localStorage.getItem("userId");
+
+        try {
+
+            const response = await fetch(
+                `http://localhost:8080/api/profile/${userId}`
+            );
+
+            if (!response.ok) {
+                alert("Please complete your profile first.");
+                navigate("/complete-profile");
+                return;
+            }
+
+            navigate("/");
+
+        } catch (error) {
+
+            console.error(error);
+            alert("Unable to check profile.");
+
+        }
+    };
+
     return (
         <div className="purchase-container">
+            <video
+                className="bg-video"
+                autoPlay
+                loop
+                muted
+                playsInline
+                src={bgVideo}
+            />
+
+            <button
+                className="back-btn"
+                onClick={() => navigate("/")}
+            >
+                ← Back
+            </button>
+
+            <button
+                className="dashboard-btn"
+                onClick={() => navigate("/dashboard")}
+            >
+                Dashboard
+            </button>
 
             <h1>Purchase Policy</h1>
+
+
 
             <div className="policy-card">
 
@@ -167,7 +239,7 @@ function PurchasePolicy() {
                     <option value="PENDING">PENDING</option>
                 </select>
 
-                <button onClick={handlePurchase}>
+                <button onClick={handlePurchasePolicy}>
                     Purchase Policy
                 </button>
 

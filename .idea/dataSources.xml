@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="insurance_db@localhost" uuid="2a8e9444-6c6f-4db2-af3c-2b137986de4b">
+    <data-source source="LOCAL" name="insurance_db@localhost" uuid="56c1ef8a-46d3-4670-a9d7-36ce88baf30d">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/backend/Insurance-backend/src/main/resources/application.properties</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/insurance_db</jdbc-url>
       <jdbc-additional-properties>

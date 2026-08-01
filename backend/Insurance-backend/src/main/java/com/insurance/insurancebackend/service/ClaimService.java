@@ -57,7 +57,14 @@ public class ClaimService {
 
     // Get All Claims
     public List<Claim> getAllClaims() {
+
         return claimRepository.findAll();
+    }
+
+    public List<Claim> getClaimsByUserId(Long userId) {
+
+        return claimRepository.findByCustomer_User_Id(userId);
+
     }
 
     // Get Claim By Id

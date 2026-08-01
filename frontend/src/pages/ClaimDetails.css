@@ -1,0 +1,151 @@
+
+
+.claim-details-container{
+    width:100%;
+    min-height:100vh;
+
+
+    justify-content:center;
+    align-items:center;
+    background:#f4f7fc;
+    font-family:Arial, Helvetica, sans-serif;
+
+    padding:40px;
+}
+
+.claim-card{
+
+    width:100%;
+    max-width:100%;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:35px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.claim-card h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#1565c0;
+}
+
+.details-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.detail-item{
+
+    background:lightcyan;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border-left:5px solid #1976d2;
+}
+
+.detail-item span{
+
+    display:block;
+
+    font-weight:bold;
+
+    color:#555;
+
+    margin-bottom:8px;
+}
+
+.detail-item p{
+
+    color:#222;
+
+    font-size:17px;
+}
+
+.full-width{
+    margin-left: 580px;
+    grid-column:1/3;
+
+}
+
+.status{
+
+    font-weight:bold;
+
+    color:green;
+}
+
+.btn-area{
+
+    margin-top:35px;
+
+    text-align:center;
+}
+
+.back-btna{
+
+    background:#1565c0;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.back-btna:hover{
+
+    background:#0d47a1;
+}
+
+.loading{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+@media(max-width:768px){
+
+    .details-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .full-width{
+
+        grid-column:1;
+    }
+
+    .claim-card{
+
+        padding:20px;
+    }
+
+}

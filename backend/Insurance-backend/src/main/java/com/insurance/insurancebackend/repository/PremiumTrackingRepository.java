@@ -17,4 +17,6 @@ public interface PremiumTrackingRepository extends JpaRepository<PremiumTracking
 
     List<PremiumTracking> findByPaymentStatus(String paymentStatus);
 
+    List<PremiumTracking> findByCustomer_User_Id(Long userId);
+
 }

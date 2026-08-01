@@ -1,6 +1,7 @@
 package com.insurance.insurancebackend.controller;
 
 import com.insurance.insurancebackend.dto.UserRegisterRequest;
+import com.insurance.insurancebackend.entity.User;
 import com.insurance.insurancebackend.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import com.insurance.insurancebackend.dto.LoginRequest;
@@ -24,18 +25,18 @@ public class UserController {
         return "User Registered Successfully";
     }
     @PostMapping("/login")
-    public String loginUser(@RequestBody LoginRequest request) {
+    public User loginUser(@RequestBody LoginRequest request) {
 
-        boolean success = userService.loginUser(
+        User user = userService.loginUser(
                 request.getEmail(),
                 request.getPassword()
         );
 
-        if (success) {
-            return "Login Successful";
-        } else {
-            return "Invalid Email or Password";
+        if (user != null) {
+            return user;
         }
+
+        return null;
     }
 }
 

@@ -64,6 +64,11 @@ public class PolicyPurchaseService {
         return policyPurchaseRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Policy Not Found"));
     }
+    public List<PolicyPurchase> getPoliciesByUserId(Long userId) {
+
+        return policyPurchaseRepository.findByCustomer_User_Id(userId);
+
+    }
 
 
 
@@ -90,6 +95,27 @@ public class PolicyPurchaseService {
 
         return policyPurchaseRepository.save(policypurchase);
 
+    }
+
+    public void renewPolicy(Long id) {
+
+        PolicyPurchase policyPurchase = policyPurchaseRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Policy Not Found"));
+
+        policyPurchase.setPolicyEndDate(
+                policyPurchase.getPolicyEndDate().plusYears(1)
+        );
+
+        policyPurchaseRepository.save(policyPurchase);
+    }
+    public void cancelPolicy(Long id) {
+
+        PolicyPurchase policyPurchase = policyPurchaseRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Policy Not Found"));
+
+        policyPurchase.setPolicyStatus("CANCELLED");
+
+        policyPurchaseRepository.save(policyPurchase);
     }
 
     public String deletePolicyPurchase(Long id) {

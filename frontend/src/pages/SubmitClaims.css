@@ -1,0 +1,78 @@
+.submit-container{
+
+    display:flex;
+    justify-content:center;
+    padding:40px;
+    min-height:100vh;
+    background-image: url("../assets/def.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.submit-card {
+    width: 800px;
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 5px 20px rgba(0,0,0,1.15);
+}
+
+.submit-card h2{
+
+    text-align:left;
+    font-size: 35px;
+    margin-bottom:25px;
+    color:whitesmoke;
+}
+
+.submit-card form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.submit-card label{
+
+    font-weight:bold;
+    text-align: left;
+    color: whitesmoke;
+}
+
+.submit-card input,
+.submit-card select,
+.submit-card textarea{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+    background: gray;
+    color: whitesmoke;
+
+
+    font-size:15px;
+}
+
+.submit-card button{
+
+    padding:12px;
+
+    background:#1565c0;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+.submit-card button:hover{
+
+    background:#0d47a1;
+}

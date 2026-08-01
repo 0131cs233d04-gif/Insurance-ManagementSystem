@@ -13,6 +13,7 @@ public interface ClaimRepository extends JpaRepository<Claim, Long> {
     Optional<Claim> findByClaimNumber(String claimNumber);
 
     List<Claim> findByStatus(String status);
+    List<Claim> findByCustomer_User_Id(Long userId);
 
 
 

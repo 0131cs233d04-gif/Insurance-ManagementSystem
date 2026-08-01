@@ -1,39 +1,53 @@
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fb;
-}
+
 
 .purchase-container{
-
-    width:700px;
+    position:absolute;
+    width:100%;
     margin:40px auto;
-    background:white;
+    left:0%;
+    top: 0%;
     padding:30px;
     border-radius:12px;
     box-shadow:0 0 15px rgba(0,0,0,.15);
 
 }
 
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 .purchase-container h1{
 
-    text-align:center;
+    text-align:left;
     color:#003366;
 
 }
 
 .policy-card{
 
-    background:#eef5ff;
+    background:rgba(0,0,0,.5);
     padding:20px;
     border-radius:10px;
     margin-bottom:25px;
+    text-align: left;
+    color: whitesmoke;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight:lighter;
+    font-size: 16px;
 
 }
 
 .policy-card h2{
 
-    color:#004aad;
+    color:#1d3557;
+    text-align: left;
+    font-size:29px;
+    font-weight: bold;
 
 }
 
@@ -42,12 +56,14 @@ body{
     display:flex;
     flex-direction:column;
 
+
 }
 
 .purchase-form label{
 
-    margin-top:15px;
+    margin-top:10px;
     font-weight:bold;
+    text-align: left;
 
 }
 
@@ -55,7 +71,9 @@ body{
 .purchase-form select{
 
     padding:10px;
-    margin-top:5px;
+    width:10%;
+    margin-top:-5px;
+    margin-left: 200px;
     border-radius:6px;
     border:1px solid #ccc;
 
@@ -63,8 +81,10 @@ body{
 
 .purchase-form button{
 
-    margin-top:25px;
+    margin-top:100px;
+    margin-left: 200px;
     padding:12px;
+    width: 20%;
     background:#004aad;
     color:white;
     border:none;
@@ -78,4 +98,41 @@ body{
 
     background:#002f6c;
 
+}
+
+.back-btn,
+.dashboard-btn {
+    position: fixed;
+    top: 20px;
+    padding: 10px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-btn {
+    left: 20px;
+}
+
+.dashboard-btn {
+    right: 20px;
+}
+
+.back-btn:hover,
+.dashboard-btn:hover {
+    background: goldenrod;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.back-btn:active,
+.dashboard-btn:active {
+    transform: scale(0.97);
 }

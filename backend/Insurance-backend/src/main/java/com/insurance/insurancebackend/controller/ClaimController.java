@@ -29,6 +29,13 @@ public class ClaimController {
         return claimService.getAllClaims();
     }
 
+    // Get Claims By Logged-in User
+    @GetMapping("/user/{userId}")
+    public List<Claim> getClaimsByUserId(@PathVariable Long userId) {
+
+        return claimService.getClaimsByUserId(userId);
+    }
+
     // Get Claim By Id
     @GetMapping("/{id}")
     public Optional<Claim> getClaimById(@PathVariable Long id) {

@@ -29,6 +29,14 @@ public class PremiumTrackingController {
         return premiumTrackingService.getAllPremiums();
     }
 
+    // Get Premiums By Logged-in User
+    @GetMapping("/user/{userId}")
+    public List<PremiumTracking> getPremiumsByUserId(
+            @PathVariable Long userId) {
+
+        return premiumTrackingService.getPremiumsByUserId(userId);
+    }
+
     // Get Premium By Id
     @GetMapping("/{id}")
     public Optional<PremiumTracking> getPremiumById(@PathVariable Long id) {

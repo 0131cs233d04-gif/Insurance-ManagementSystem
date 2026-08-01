@@ -6,27 +6,81 @@ function Profile() {
 
     const navigate = useNavigate();
     const [profile, setProfile] = useState(null);
+    const [profileNotFound, setProfileNotFound] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/profile/1")
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                setProfile(data);
+
+        const userId = localStorage.getItem("userId");
+
+        console.log("PROFILE USER ID:", userId);
+
+        fetch(`http://localhost:8080/api/profile/${userId}`)
+            .then((res) => {
+
+                if (!res.ok) {
+                    setProfileNotFound(true);
+                    return null;
+                }
+
+                return res.json();
             })
-            .catch((err) => console.error(err));
+            .then((data) => {
+
+                if (data) {
+                    console.log("PROFILE DATA:", data);
+                    setProfile(data);
+                }
+
+            })
+            .catch((err) => {
+                console.error(err);
+                setProfileNotFound(true);
+            });
+
     }, []);
+
+    if (profileNotFound) {
+        return (
+            <div className="profile-container">
+
+                <button
+                    className="back"
+                    onClick={() => navigate("/dashboard")}
+                >
+                    ⬅ Back
+                </button>
+
+                <h1>My Profile</h1>
+
+                <div className="profile-card">
+                    <h2>No Profile Found</h2>
+
+                    <p>You have not completed your profile yet.</p>
+
+                    <button
+                        onClick={() => navigate("/complete-profile")}
+                    >
+                        Complete Profile
+                    </button>
+                </div>
+
+            </div>
+        );
+    }
 
     if (!profile) {
         return <h2>Loading Profile...</h2>;
     }
 
     return (
+
         <div className="profile-container">
 
-            <button onClick={() => navigate("/dashboard")}>
+            <button  class="back"  onClick={() => navigate("/dashboard")}>
                 ⬅ Back
             </button>
+
+            <button class="edit">Edit</button>
 
             <h1>My Profile</h1>
 

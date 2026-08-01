@@ -12,5 +12,6 @@ import java.util.List;
 
     public interface PolicyPurchaseRepository extends JpaRepository<PolicyPurchase, Long> {
     List<PolicyPurchase> findByCustomer(CustomerProfile customer);
+    List<PolicyPurchase> findByCustomer_User_Id(Long userId);
 }
 

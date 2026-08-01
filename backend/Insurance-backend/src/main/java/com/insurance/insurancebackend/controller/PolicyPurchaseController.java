@@ -52,6 +52,15 @@ public class PolicyPurchaseController {
         );
     }
 
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<PolicyPurchase>> getPoliciesByUserId(
+            @PathVariable Long userId) {
+
+        return ResponseEntity.ok(
+                policyPurchaseService.getPoliciesByUserId(userId)
+        );
+    }
+
     // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<PolicyPurchase> updatePolicyPurchase(
@@ -60,6 +69,21 @@ public class PolicyPurchaseController {
 
         return ResponseEntity.ok(
                 policyPurchaseService.updatePolicyPurchase(id, request));
+    }
+
+    @PutMapping("/{id}/renew")
+    public ResponseEntity<String> renewPolicy(@PathVariable Long id) {
+
+        policyPurchaseService.renewPolicy(id);
+
+        return ResponseEntity.ok("Policy Renewed Successfully");
+    }
+    @PutMapping("/{id}/cancel")
+    public ResponseEntity<String> cancelPolicy(@PathVariable Long id) {
+
+        policyPurchaseService.cancelPolicy(id);
+
+        return ResponseEntity.ok("Policy Cancelled Successfully");
     }
 
     // DELETE
