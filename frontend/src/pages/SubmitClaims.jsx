@@ -24,7 +24,7 @@ function SubmitClaim() {
         console.log("SUBMIT CLAIM USER ID:", userId);
 
         // User ki policies
-        fetch(`http://localhost:8080/api/policy-purchases/user/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/policy-purchases/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("USER POLICIES:", data);
@@ -34,7 +34,7 @@ function SubmitClaim() {
 
 
         // User ka CustomerProfile
-        fetch(`http://localhost:8080/api/profile/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/profile/${userId}`)
             .then((res) => {
 
                 if (!res.ok) {
@@ -101,7 +101,7 @@ function SubmitClaim() {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/claims", {
+            const response = await fetch("https://insurance-managementsystem-production.up.railway.app/api/claims", {
 
                 method: "POST",
 
@@ -132,7 +132,7 @@ function SubmitClaim() {
 
                     form.set("file", files[i]);
 
-                    const docResponse = await fetch("http://localhost:8080/api/documents", {
+                    const docResponse = await fetch("https://insurance-managementsystem-production.up.railway.app/api/documents", {
                         method: "POST",
                         body: form
                     });

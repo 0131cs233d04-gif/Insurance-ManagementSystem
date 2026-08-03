@@ -8,7 +8,7 @@ function ClaimDetails() {
     const [claim, setClaim] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/claims/${id}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/claims/${id}`)
             .then((res) => res.json())
             .then((data) => setClaim(data))
             .catch((err) => console.error("Error:", err));

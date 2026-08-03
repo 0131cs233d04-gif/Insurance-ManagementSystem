@@ -26,7 +26,7 @@ function AdminDashboard() {
     const fetchAgents = async () => {
         try {
             const response = await fetch(
-                "http://localhost:8080/api/user/agents"
+                "https://insurance-managementsystem-production.up.railway.app/api/user/agents"
             );
 
             const data = await response.json();
@@ -43,7 +43,7 @@ function AdminDashboard() {
     const fetchClients = async () => {
         try {
             const response = await fetch(
-                "http://localhost:8080/api/user/clients"
+                "https://insurance-managementsystem-production.up.railway.app/api/user/clients"
             );
 
             const data = await response.json();
@@ -58,7 +58,7 @@ function AdminDashboard() {
     const fetchPolicies = async () => {
         try {
             const response = await fetch(
-                "http://localhost:8080/api/policies"
+                "https://insurance-managementsystem-production.up.railway.app/api/policies"
             );
 
             const data = await response.json();
@@ -73,7 +73,7 @@ function AdminDashboard() {
     const fetchClaims = async () => {
         try {
             const response = await fetch(
-                "http://localhost:8080/api/claims"
+                "https://insurance-managementsystem-production.up.railway.app/api/claims"
             );
 
             const data = await response.json();
@@ -111,7 +111,7 @@ function AdminDashboard() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/user/register-staff",
+                "https://insurance-managementsystem-production.up.railway.app/api/user/register-staff",
                 {
                     method: "POST",
 

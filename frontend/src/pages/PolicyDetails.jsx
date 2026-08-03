@@ -13,7 +13,7 @@ function PolicyDetails() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/api/policy-purchases/${id}/renew`,
+                `https://insurance-managementsystem-production.up.railway.app/api/policy-purchases/${id}/renew`,
                 {
                     method: "PUT"
                 }
@@ -44,7 +44,7 @@ function PolicyDetails() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/api/policy-purchases/${id}/cancel`,
+                `https://insurance-managementsystem-production.up.railway.app/api/policy-purchases/${id}/cancel`,
                 {
                     method: "PUT"
                 }
@@ -66,7 +66,7 @@ function PolicyDetails() {
 
     useEffect(() => {
 
-        fetch(`http://localhost:8080/api/policy-purchases/${id}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/policy-purchases/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

@@ -14,7 +14,7 @@ function Profile() {
 
         console.log("PROFILE USER ID:", userId);
 
-        fetch(`http://localhost:8080/api/profile/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/profile/${userId}`)
             .then((res) => {
 
                 if (!res.ok) {

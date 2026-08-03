@@ -14,7 +14,7 @@ function AgentDashboard() {
     const fetchClients = async () => {
         try {
             const response = await fetch(
-                "http://localhost:8080/api/profile/all"
+                "https://insurance-managementsystem-production.up.railway.app/api/profile/all"
             );
 
             if (!response.ok) {

@@ -21,7 +21,7 @@ function PurchasePolicy() {
     useEffect(() => {
 
 
-        fetch(`http://localhost:8080/api/policies/${policyId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/policies/${policyId}`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error("Failed to fetch policy");
@@ -36,7 +36,7 @@ function PurchasePolicy() {
             });
         const userId = localStorage.getItem("userId");
 
-        fetch(`http://localhost:8080/api/profile/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/profile/${userId}`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error("Customer profile not found");
@@ -83,7 +83,7 @@ function PurchasePolicy() {
             };
 
             const response = await fetch(
-                "http://localhost:8080/api/policy-purchases",
+                "https://insurance-managementsystem-production.up.railway.app/api/policy-purchases",
                 {
                     method: "POST",
                     headers: {
@@ -133,7 +133,7 @@ function PurchasePolicy() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/api/profile/${userId}`
+                `https://insurance-managementsystem-production.up.railway.app/api/profile/${userId}`
             );
 
             if (!response.ok) {

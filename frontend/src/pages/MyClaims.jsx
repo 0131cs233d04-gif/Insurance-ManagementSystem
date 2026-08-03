@@ -15,7 +15,7 @@ function MyClaims() {
         try {
             const userId = localStorage.getItem("userId");
 
-            const response = await fetch(`http://localhost:8080/api/claims/user/${userId}`);
+            const response = await fetch(`https://insurance-managementsystem-production.up.railway.app/api/claims/user/${userId}`);
 
             const data = await response.json();
 

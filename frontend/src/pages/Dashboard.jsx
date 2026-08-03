@@ -15,7 +15,7 @@ function Dashboard() {
 
         const userId = localStorage.getItem("userId");
 
-        fetch(`http://localhost:8080/api/policy-purchases/user/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/policy-purchases/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -23,7 +23,7 @@ function Dashboard() {
             })
             .catch((err) => console.error(err));
 
-        fetch(`http://localhost:8080/api/claims/user/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/claims/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Claims:", data);
@@ -31,7 +31,7 @@ function Dashboard() {
             })
             .catch((err) => console.error(err));
 
-        fetch(`http://localhost:8080/api/premium/user/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/premium/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Premiums:", data);
@@ -39,7 +39,7 @@ function Dashboard() {
             })
             .catch((err) => console.error(err));
 
-        fetch(`http://localhost:8080/api/documents/user/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/documents/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Documents:", data);

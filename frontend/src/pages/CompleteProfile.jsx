@@ -41,7 +41,7 @@ function CompleteProfile() {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/profile", {
+            const response = await fetch("https://insurance-managementsystem-production.up.railway.app/api/profile", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

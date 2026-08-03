@@ -10,7 +10,7 @@ function MyPolicies() {
     useEffect(() => {
         const userId = localStorage.getItem("userId");
 
-        fetch(`http://localhost:8080/api/policy-purchases/user/${userId}`)
+        fetch(`https://insurance-managementsystem-production.up.railway.app/api/policy-purchases/user/${userId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
