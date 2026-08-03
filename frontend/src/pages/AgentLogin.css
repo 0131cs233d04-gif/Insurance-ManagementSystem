@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+.agent-page {
+    min-height: 100vh;
+    width: 100%;
+    background:
+            radial-gradient(circle at 10% 20%, rgba(32, 201, 151, 0.18), transparent 30%),
+            radial-gradient(circle at 90% 80%, rgba(0, 123, 255, 0.15), transparent 30%),
+            linear-gradient(135deg, #061b2c, #0b2942, #103b52);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* BACK BUTTON */
+
+.agent-back {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    padding: 10px 18px;
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.agent-back:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* MAIN CONTAINER */
+
+.agent-wrapper {
+    width: 950px;
+    min-height: 560px;
+
+    display: flex;
+
+    border-radius: 25px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* LEFT SIDE */
+
+.agent-info {
+    width: 50%;
+    padding: 65px 55px;
+
+    color: white;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(13, 148, 136, 0.35),
+                    rgba(3, 37, 65, 0.4)
+            );
+}
+
+.agent-logo {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg, #20c997, #00a8cc);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    box-shadow: 0 10px 30px rgba(32, 201, 151, 0.3);
+}
+
+.agent-info h1 {
+    font-size: 42px;
+    margin: 20px 0 5px;
+}
+
+.agent-info h2 {
+    color: #64e5c1;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+.agent-info > p {
+    color: #c6d9e6;
+    line-height: 1.7;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.agent-features {
+    margin-top: 40px;
+}
+
+.agent-features p {
+    color: #d9f8ef;
+    margin: 18px 0;
+    font-size: 15px;
+}
+
+
+/* LOGIN SIDE */
+
+.agent-login-card {
+    width: 50%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 45px 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agent-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background: #e5faf4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.agent-login-card h1 {
+    text-align: center;
+    color: #102a43;
+    margin: 8px 0;
+}
+
+.agent-subtitle {
+    text-align: center;
+    color: #718096;
+
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+
+/* FORM */
+
+.agent-login-card label {
+    display: block;
+
+    color: #34495e;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.agent-input {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #d7e1e8;
+    border-radius: 10px;
+
+    background: white;
+
+    margin-bottom: 22px;
+
+    transition: 0.3s;
+}
+
+.agent-input:focus-within {
+    border-color: #16a085;
+
+    box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.12);
+}
+
+.agent-input span {
+    margin-left: 15px;
+}
+
+.agent-input input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 0 14px;
+
+    font-size: 15px;
+
+    background: transparent;
+}
+
+
+/* OPTIONS */
+
+.agent-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.remember-agent {
+    display: flex !important;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0 !important;
+
+    font-weight: normal !important;
+}
+
+.forgot-agent {
+    border: none;
+    background: none;
+
+    color: #15967d;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+/* LOGIN BUTTON */
+
+.agent-submit {
+    width: 100%;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: linear-gradient(135deg, #15967d, #087f8c);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.agent-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(21, 150, 125, 0.3);
+}
+
+
+/* SECURITY */
+
+.agent-security {
+    text-align: center;
+
+    color: #8492a6;
+
+    font-size: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .agent-wrapper {
+        width: 90%;
+    }
+
+    .agent-info {
+        display: none;
+    }
+
+    .agent-login-card {
+        width: 100%;
+    }
+}

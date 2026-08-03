@@ -10,6 +10,11 @@ import MyClaims from "./pages/MyClaims";
 import ClaimDetails from "./pages/ClaimDetails";
 import SubmitClaim from "./pages/SubmitClaims";
 import CompleteProfile from "./pages/CompleteProfile";
+import AdminLogin from "./pages/AdminLogin";
+import AgentLogin from "./pages/AgentLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AgentDashboard from "./pages/AgentDashboard";
+
 
 
 
@@ -32,6 +37,10 @@ function App() {
                 path="/complete-profile"
                 element={<CompleteProfile />}
             />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/agent-login" element={<AgentLogin />} />
+                <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/agent-dashboard" element={<AgentDashboard />} />
 
 
 

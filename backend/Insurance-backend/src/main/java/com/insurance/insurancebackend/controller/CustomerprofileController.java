@@ -4,6 +4,7 @@ import com.insurance.insurancebackend.dto.CustomerProfileRequest;
 import com.insurance.insurancebackend.entity.CustomerProfile;
 import com.insurance.insurancebackend.service.CustomerProfileService;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 
 @RestController
@@ -28,5 +29,9 @@ public class CustomerprofileController {
 
         return customerProfileService.getProfile(userId);
 
+    }
+    @GetMapping("/all")
+    public List<CustomerProfile> getAllProfiles() {
+        return customerProfileService.getAllProfiles();
     }
 }

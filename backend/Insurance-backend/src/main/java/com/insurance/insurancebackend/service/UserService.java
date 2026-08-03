@@ -8,6 +8,10 @@ import com.insurance.insurancebackend.entity.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.Optional;
 import com.insurance.insurancebackend.entity.CustomerProfile;
+import com.insurance.insurancebackend.dto.StaffRegisterRequest;
+import java.util.List;
+
+
 
 
 @Service
@@ -35,6 +39,8 @@ public class UserService {
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
+        user.setRole("CLIENT");
+
         userRepository.save(user);
 
         CustomerProfile profile = new CustomerProfile();
@@ -55,7 +61,27 @@ public class UserService {
         customerProfileRepository.save(profile);
 
     }
-    public User loginUser(String email, String password) {
+
+    public void registerStaff(StaffRegisterRequest request) {
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new RuntimeException("Email already exists");
+        }
+        if (!request.getRole().equalsIgnoreCase("ADMIN")
+                && !request.getRole().equalsIgnoreCase("AGENT")) {
+
+            throw new RuntimeException("Role must be ADMIN or AGENT");
+        }
+        User user = new User();
+        user.setFirstName(request.getFirstName());
+        user.setLastName(request.getLastName());
+        user.setEmail(request.getEmail());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setRole(request.getRole().toUpperCase());
+
+        userRepository.save(user);
+
+    }
+    public User loginUser(String email, String password, String role) {
 
         Optional<User> user = userRepository.findByEmail(email);
 
@@ -65,13 +91,19 @@ public class UserService {
 
             if (passwordEncoder.matches(
                     password,
-                    foundUser.getPassword())) {
+                    foundUser.getPassword()) && foundUser.getRole().equalsIgnoreCase(role)) {
 
                 return foundUser;
             }
         }
 
         return null;
+    }
+    public List<User> getAllAgents() {
+        return userRepository.findByRole("AGENT");
+    }
+    public List<User> getAllClients() {
+        return userRepository.findByRole("CLIENT");
     }
 
 }

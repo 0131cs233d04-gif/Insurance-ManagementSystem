@@ -43,4 +43,7 @@ public class User {
             (access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    @Column(nullable = false)
+    private String role;
+
 }

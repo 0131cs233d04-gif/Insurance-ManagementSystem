@@ -44,4 +44,7 @@ public class CustomerProfileService {
                 .orElseThrow(() -> new RuntimeException("Customer Profile Not Found"));
 
     }
+    public java.util.List<CustomerProfile> getAllProfiles() {
+        return customerProfileRepository.findAll();
+    }
 }

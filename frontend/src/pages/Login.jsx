@@ -22,6 +22,11 @@ function Login() {
     const [showPlan, setShowPlan] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+
+
+
+
     const navigate = useNavigate();
 
 
@@ -53,7 +58,7 @@ function Login() {
         try {
             const response = await fetch("http://localhost:8080/api/user/login", {
                 method: "POST", headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({email, password})
+                body: JSON.stringify({email, password, role:"CLIENT"})
             });
 
             console.log("Status:", response.status);
@@ -80,6 +85,7 @@ function Login() {
                 );
 
                 localStorage.setItem("userEmail", user.email);
+                localStorage.setItem("userRole", user.role);
                 if (selectedPolicyId !== null) {
 
                     navigate(`/purchase-policy/${selectedPolicyId}`);
@@ -361,6 +367,24 @@ function Login() {
                     </div>
 
                 )}
+
+                <div className="login-options">
+
+                    <button
+                        className="admin-login-btn"
+                        onClick={() => navigate("/admin-login")}
+                    >
+                        Admin Login
+                    </button>
+
+                    <button
+                        className="agent-login-btn"
+                        onClick={() => navigate("/agent-login")}
+                    >
+                        Agent Login
+                    </button>
+
+                </div>
 
 
                 {/*--------------------------------------------------------------------------------------------------------*/}

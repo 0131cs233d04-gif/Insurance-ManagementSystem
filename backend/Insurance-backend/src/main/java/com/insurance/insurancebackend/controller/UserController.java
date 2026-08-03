@@ -5,6 +5,8 @@ import com.insurance.insurancebackend.entity.User;
 import com.insurance.insurancebackend.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import com.insurance.insurancebackend.dto.LoginRequest;
+import com.insurance.insurancebackend.dto.StaffRegisterRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
@@ -24,12 +26,20 @@ public class UserController {
         userService.registerUser(request);
         return "User Registered Successfully";
     }
+    @PostMapping("/register-staff")
+    public String registerStaff(@RequestBody StaffRegisterRequest request) {
+
+        userService.registerStaff(request);
+
+        return "Staff Registered Successfully";
+    }
     @PostMapping("/login")
     public User loginUser(@RequestBody LoginRequest request) {
 
         User user = userService.loginUser(
                 request.getEmail(),
-                request.getPassword()
+                request.getPassword(),
+                request.getRole()
         );
 
         if (user != null) {
@@ -37,6 +47,14 @@ public class UserController {
         }
 
         return null;
+    }
+    @GetMapping("/agents")
+    public List<User> getAllAgents() {
+        return userService.getAllAgents();
+    }
+    @GetMapping("/clients")
+    public List<User> getAllClients() {
+        return userService.getAllClients();
     }
 }
 

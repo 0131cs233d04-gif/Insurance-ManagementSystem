@@ -567,6 +567,19 @@ body,
     overflow: hidden;
 }
 
+.login-options {
+    display: flex;
+    gap: 15px;
+}
+
+.admin-login-btn,
+.agent-login-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 
 
 
